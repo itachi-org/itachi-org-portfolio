@@ -1,0 +1,140 @@
+.projects-section {
+  background-color: var(--surface-color);
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Neon Border Trace Effect */
+.card-border-trace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card-border-trace::before,
+.card-border-trace::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.card-border-trace::before {
+  top: 0;
+  left: 0;
+}
+
+.card-border-trace::after {
+  bottom: 0;
+  right: 0;
+}
+
+.project-card:hover .card-border-trace::before {
+  width: 100%;
+  height: 100%;
+  border-top-color: var(--primary-neon);
+  border-right-color: var(--primary-neon);
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+  box-shadow: inset 0 0 10px rgba(0, 255, 231, 0.2);
+}
+
+.project-card:hover .card-border-trace::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: var(--primary-neon);
+  border-left-color: var(--primary-neon);
+  transition: border-color 0s ease-out 0.3s, width 0.15s ease-out 0.3s, height 0.15s ease-out 0.45s;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.4);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.project-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.project-subtitle {
+  color: var(--secondary-neon);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.project-icon {
+  background: rgba(0, 255, 231, 0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  color: var(--accent-yellow);
+  background: rgba(255, 230, 0, 0.05);
+  border: 1px solid rgba(255, 230, 0, 0.2);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.project-link {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+}

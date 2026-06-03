@@ -1,0 +1,84 @@
+.education-section {
+  background-color: var(--surface-color);
+  position: relative;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.edu-card {
+  position: relative;
+  text-align: center;
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+.edu-status-badge {
+  position: absolute;
+  top: 15px;
+  right: -30px;
+  background: var(--secondary-neon);
+  color: #fff;
+  padding: 5px 30px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--secondary-neon);
+  z-index: 10;
+}
+
+.edu-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 0, 170, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted var(--secondary-neon);
+  box-shadow: inset 0 0 15px rgba(255, 0, 170, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.edu-card:hover .edu-icon-wrapper {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.edu-info h3 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  min-height: 3rem;
+}
+
+.edu-school {
+  color: var(--primary-neon);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.edu-period {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.edu-period .line {
+  height: 1px;
+  width: 30px;
+  background: var(--text-muted);
+}
+
+.edu-period .text {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
