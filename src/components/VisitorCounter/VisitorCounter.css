@@ -1,0 +1,54 @@
+.visitor-counter {
+  position: fixed;
+  bottom: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(13, 13, 26, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glow);
+  border-radius: 30px;
+  padding: 0.55rem 1rem;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.15);
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.visitor-counter .vc-icon {
+  color: var(--primary-neon);
+  filter: drop-shadow(0 0 4px var(--primary-neon));
+  flex-shrink: 0;
+}
+
+.visitor-counter .vc-count {
+  color: var(--text-primary);
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+}
+
+.visitor-counter .vc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-neon);
+  box-shadow: 0 0 6px var(--primary-neon);
+  animation: vc-pulse 1.8s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes vc-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+@media (max-width: 480px) {
+  .visitor-counter {
+    bottom: 0.75rem;
+    right: 0.75rem;
+    padding: 0.45rem 0.8rem;
+  }
+}

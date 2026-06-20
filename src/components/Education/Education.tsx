@@ -29,7 +29,7 @@ export default function Education() {
   return (
     <section id="education" className="education-section">
       <div className="section-container">
-        <h2 className="section-title">KNOWLEDGE_BASE (EDU)</h2>
+        <h2 className="section-title">EDUCATION</h2>
         
         <div ref={revealRef} className="edu-grid reveal">
           {eduData.map((edu, idx) => (

@@ -1,6 +1,36 @@
 import { useEffect, useRef } from 'react';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Skills.css';
+import {
+  SiPython, SiSharp, SiDotnet, SiOpenjdk, SiHtml5, SiCss, SiJavascript,
+  SiReact, SiTypescript, SiVite, SiMysql, SiFirebase, SiFigma
+} from 'react-icons/si';
+import { Workflow, Cog, PenTool, Sparkles, type LucideIcon } from 'lucide-react';
+import type { IconType } from 'react-icons';
+
+// Maps each skill label to its brand icon. Anything without a known
+// brand mark (process/automation concepts) falls back to a generic
+// lucide icon so every badge still reads visually, not just as text.
+const skillIconMap: Record<string, IconType | LucideIcon> = {
+  'Python': SiPython,
+  'C#': SiSharp,
+  '.NET': SiDotnet,
+  'Java': SiOpenjdk,
+  'HTML': SiHtml5,
+  'CSS': SiCss,
+  'JavaScript': SiJavascript,
+  'React': SiReact,
+  'TypeScript': SiTypescript,
+  'Vite': SiVite,
+  'SQL': SiMysql,
+  'Firebase': SiFirebase,
+  'MySQL': SiMysql,
+  'Figma': SiFigma,
+  'UI/UX Design': PenTool,
+  'Gumloop': Sparkles,
+  'Workflow Automation': Workflow,
+  'Process Optimization': Cog,
+};
 
 export default function Skills() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -15,7 +45,7 @@ export default function Skills() {
     let drops: number[] = [];
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$+-*/=%""\'#&_(),.;:?!\\|{}<>[]^~'.split('');
     const fontSize = 16;
-    
+
     let columns = 0;
 
     const initCanvas = () => {
@@ -34,7 +64,7 @@ export default function Skills() {
 
     let animationId: number;
     let lastTime = 0;
-    const fps = 30; // Control speed
+    const fps = 30;
     const interval = 1000 / fps;
 
     const draw = (currentTime: number) => {
@@ -44,11 +74,10 @@ export default function Skills() {
       if (deltaTime > interval) {
         lastTime = currentTime - (deltaTime % interval);
 
-        // Translucent background to show trail
         ctx.fillStyle = 'rgba(10, 10, 15, 0.1)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
-        ctx.fillStyle = '#00ffe7'; 
+
+        ctx.fillStyle = '#00ffe7';
         ctx.font = fontSize + 'px "Share Tech Mono"';
 
         for (let i = 0; i < drops.length; i++) {
@@ -96,8 +125,8 @@ export default function Skills() {
     <section id="skills" className="skills-section">
       <canvas ref={canvasRef} className="matrix-canvas"></canvas>
       <div className="section-container skills-content">
-        <h2 className="section-title">CORE_CAPABILITIES</h2>
-        
+        <h2 className="section-title">CORE_SKILLS</h2>
+
         <div ref={revealRef} className="skills-grid reveal">
           {skillCategories.map((cat, idx) => (
             <div key={idx} className="skill-category glass-card">
@@ -106,9 +135,15 @@ export default function Skills() {
                 <div className="glow-line"></div>
               </div>
               <div className="skill-badges">
-                {cat.skills.map(skill => (
-                  <span key={skill} className="skill-badge">{skill}</span>
-                ))}
+                {cat.skills.map(skill => {
+                  const Icon = skillIconMap[skill];
+                  return (
+                    <span key={skill} className="skill-badge">
+                      {Icon && <Icon className="skill-badge-icon" aria-hidden="true" />}
+                      {skill}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           ))}

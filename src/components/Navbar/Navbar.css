@@ -3,14 +3,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 2rem;
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
   transition: all 0.3s ease;
   z-index: 1000;
   background: transparent;
 }
 
 .navbar.scrolled {
-  padding: 1rem 2rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 4vw, 2rem);
   background: rgba(10, 10, 15, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-glow);
@@ -27,7 +27,7 @@
 
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
   font-weight: 700;
   cursor: pointer;
   display: flex;
@@ -49,7 +49,7 @@
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: clamp(1rem, 2.5vw, 2rem);
 }
 
 .nav-links li button {
@@ -97,6 +97,8 @@
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  padding: 0.5rem;
+  margin: -0.5rem;
 }
 
 .hamburger span {
@@ -114,18 +116,19 @@
 
   .nav-links {
     position: fixed;
-    top: 70px;
+    top: 0;
     right: -100%;
     flex-direction: column;
-    background: rgba(13, 13, 26, 0.95);
+    background: rgba(13, 13, 26, 0.97);
     backdrop-filter: blur(10px);
-    width: 60%;
-    height: calc(100vh - 70px);
-    padding: 2rem;
-    gap: 3rem;
+    width: min(75%, 320px);
+    height: 100svh;
+    padding: 6rem 2rem 2rem;
+    gap: 2.5rem;
     align-items: center;
     border-left: 1px solid var(--border-glow);
     transition: right 0.4s ease;
+    overflow-y: auto;
   }
 
   .nav-links.active {
@@ -141,4 +144,8 @@
   .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
+}
+
+@media (max-width: 360px) {
+  .nav-links { width: 85%; }
 }

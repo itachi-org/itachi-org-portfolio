@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="section-container">
-        <h2 className="section-title">ESTABLISH_CONNECTION</h2>
+        <h2 className="section-title">CONTACT ME</h2>
         
         <div ref={revealRef} className="contact-grid reveal">
           <div className="contact-info glass-card">

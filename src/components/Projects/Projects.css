@@ -5,8 +5,8 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: var(--gap-lg);
 }
 
 .project-card {
@@ -15,73 +15,81 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  padding: 0;
 }
 
-/* Neon Border Trace Effect */
-.card-border-trace {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 255, 231, 0.08), rgba(255, 0, 170, 0.08));
+  border-bottom: 1px solid var(--border-glow);
+}
+
+.project-thumb img {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
-  z-index: 0;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.06);
+  filter: saturate(1.1) contrast(1.1);
+}
+
+.project-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-color) 0%, transparent 55%);
   pointer-events: none;
 }
 
-.card-border-trace::before,
-.card-border-trace::after {
-  content: '';
+/* If a screenshot hasn't been added yet, show a clean placeholder
+   instead of a broken image icon */
+.project-thumb.no-image img { display: none; }
+.project-thumb.no-image::after {
+  content: '[ NO PREVIEW AVAILABLE ]';
   position: absolute;
-  width: 0;
-  height: 0;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-  border-radius: 8px;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 1rem;
 }
 
-.card-border-trace::before {
-  top: 0;
-  left: 0;
-}
-
-.card-border-trace::after {
-  bottom: 0;
-  right: 0;
-}
-
-.project-card:hover .card-border-trace::before {
-  width: 100%;
-  height: 100%;
-  border-top-color: var(--primary-neon);
-  border-right-color: var(--primary-neon);
-  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
-  box-shadow: inset 0 0 10px rgba(0, 255, 231, 0.2);
-}
-
-.project-card:hover .card-border-trace::after {
-  width: 100%;
-  height: 100%;
-  border-bottom-color: var(--primary-neon);
-  border-left-color: var(--primary-neon);
-  transition: border-color 0s ease-out 0.3s, width 0.15s ease-out 0.3s, height 0.15s ease-out 0.45s;
-  box-shadow: 0 0 10px rgba(0, 255, 231, 0.4);
+.project-header,
+.project-tech,
+.project-desc,
+.project-link {
+  margin-left: clamp(1.25rem, 3vw, 2.5rem);
+  margin-right: clamp(1.25rem, 3vw, 2.5rem);
 }
 
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 1.75rem;
   margin-bottom: 1.5rem;
   position: relative;
   z-index: 1;
+  gap: 1rem;
 }
 
 .project-header h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 2.6vw, 1.4rem);
   color: var(--text-primary);
   margin-bottom: 0.3rem;
+  word-break: break-word;
 }
 
 .project-subtitle {
@@ -98,6 +106,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .project-tech {
@@ -137,4 +146,49 @@
   position: relative;
   z-index: 1;
   text-decoration: none;
+  margin-bottom: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+/* Neon Border Trace Effect */
+.card-border-trace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card-border-trace::before,
+.card-border-trace::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.card-border-trace::before { top: 0; left: 0; }
+.card-border-trace::after { bottom: 0; right: 0; }
+
+.project-card:hover .card-border-trace::before {
+  width: 100%;
+  height: 100%;
+  border-top-color: var(--primary-neon);
+  border-right-color: var(--primary-neon);
+  transition: width 0.15s ease-out, height 0.15s ease-out 0.15s;
+  box-shadow: inset 0 0 10px rgba(0, 255, 231, 0.2);
+}
+
+.project-card:hover .card-border-trace::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-color: var(--primary-neon);
+  border-left-color: var(--primary-neon);
+  transition: border-color 0s ease-out 0.3s, width 0.15s ease-out 0.3s, height 0.15s ease-out 0.45s;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.4);
 }

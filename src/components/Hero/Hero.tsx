@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './Hero.css';
+import { useMagnetic } from '../../hooks/useMagnetic';
 
 export default function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -7,6 +8,9 @@ export default function Hero() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+
+  const primaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
+  const secondaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
 
   const roles = ["Full-Stack Developer", "Data Analyst", "AI Automation Engineer", "UI/UX Designer"];
 
@@ -16,8 +20,8 @@ export default function Hero() {
       const i = loopNum % roles.length;
       const fullText = roles[i];
 
-      setRoleText(isDeleting 
-        ? fullText.substring(0, roleText.length - 1) 
+      setRoleText(isDeleting
+        ? fullText.substring(0, roleText.length - 1)
         : fullText.substring(0, roleText.length + 1)
       );
 
@@ -36,7 +40,8 @@ export default function Hero() {
     return () => clearTimeout(ticker);
   }, [roleText, isDeleting, loopNum, roles, typingSpeed]);
 
-  // Particle canvas
+  // Particle canvas — particle count now scales with viewport so the
+  // effect stays light on phones and rich on desktop.
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -84,12 +89,20 @@ export default function Hero() {
 
     let particlesArray: Particle[] = [];
 
+    const particleCountForWidth = (w: number) => {
+      if (w < 480) return 30;
+      if (w < 900) return 50;
+      return 80;
+    };
+
     const init = () => {
       if (!canvas) return;
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const section = canvas.parentElement;
+      canvas.width = section ? section.offsetWidth : window.innerWidth;
+      canvas.height = section ? section.offsetHeight : window.innerHeight;
       particlesArray = [];
-      for (let i = 0; i < 80; i++) {
+      const count = particleCountForWidth(canvas.width);
+      for (let i = 0; i < count; i++) {
         particlesArray.push(new Particle());
       }
     };
@@ -108,11 +121,9 @@ export default function Hero() {
     init();
     animate();
 
-    const handleResize = () => {
-      init();
-    };
+    const handleResize = () => init();
     window.addEventListener('resize', handleResize);
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       cancelAnimationFrame(animationId);
@@ -133,10 +144,11 @@ export default function Hero() {
             <span className="cursor">|</span>
           </h2>
           <div className="cta-container">
-            <a href="#projects" className="neon-btn primary">
+            <a ref={primaryBtnRef} href="#projects" className="neon-btn primary">
               <span className="btn-text">[VIEW PROJECTS]</span>
             </a>
             <a
+              ref={secondaryBtnRef}
               href="/files/cv.pdf"
               download="Marc_Airon_Cantal_CV.pdf"
               className="neon-btn secondary"
@@ -163,6 +175,21 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="hero-marquee marquee-strip" aria-hidden="true">
+        <div className="marquee-track">
+          {Array.from({ length: 2 }).flatMap((_, i) =>
+            ['FULL-STACK DEVELOPER', 'DATA SCIENCE', 'AI AUTOMATION', 'UI / UX DESIGN'].map((label) => (
+              <span key={`${i}-${label}`}>{label}</span>
+            ))
+          )}
+        </div>
+      </div>
+
+      <div className="scroll-cue">
+        <span>SCROLL</span>
+        <span className="line"></span>
       </div>
     </section>
   );

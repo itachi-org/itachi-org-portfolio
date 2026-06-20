@@ -11,6 +11,7 @@ import Experience from './components/Experience/Experience';
 import Education from './components/Education/Education';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import VisitorCounter from './components/VisitorCounter/VisitorCounter';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -45,6 +46,7 @@ export default function App() {
             <Contact />
           </main>
           <Footer />
+          <VisitorCounter />
         </>
       )}
     </div>

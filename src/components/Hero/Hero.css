@@ -1,8 +1,9 @@
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   overflow: hidden;
 }
 
@@ -23,12 +24,14 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  gap: 2rem;
-  padding-top: 8rem;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  padding-top: clamp(5rem, 14vw, 8rem);
+  flex-wrap: wrap;
 }
 
 .hero-text {
-  flex: 1;
+  flex: 1 1 380px;
+  min-width: 0;
 }
 
 .greeting {
@@ -36,17 +39,21 @@
   font-family: var(--font-body);
   letter-spacing: 2px;
   margin-bottom: 1rem;
+  font-size: clamp(0.75rem, 1.6vw, 1rem);
 }
 
-/* Glitch Effect */
+/* Glitch Effect — fluid sizing so the long name never overflows on
+   narrow screens */
 .glitch-name {
-  font-size: 4.5rem;
+  font-size: clamp(2rem, 7vw, 4.5rem);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1rem;
   position: relative;
   text-shadow: 0 0 10px rgba(224, 224, 255, 0.3);
   animation: txt-flicker 4s infinite alternate;
+  line-height: 1.05;
+  word-break: break-word;
 }
 
 .glitch-name::before,
@@ -93,20 +100,17 @@
 }
 
 @keyframes txt-flicker {
-  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
-    opacity: 1;
-  }
-  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
-    opacity: 0.8;
-  }
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% { opacity: 1; }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% { opacity: 0.8; }
 }
 
 .typewriter-container {
-  font-size: 1.8rem;
+  font-size: clamp(1rem, 2.6vw, 1.8rem);
   color: var(--primary-neon);
-  margin-bottom: 2.5rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
   font-family: var(--font-body);
   text-shadow: 0 0 10px rgba(0, 255, 231, 0.4);
+  min-height: 1.5em;
 }
 
 .cursor {
@@ -119,15 +123,16 @@
 
 .cta-container {
   display: flex;
-  gap: 1.5rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  flex-wrap: wrap;
 }
 
 .neon-btn {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.6rem;
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: clamp(0.85rem, 1.6vw, 1.1rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
@@ -161,7 +166,6 @@
   text-shadow: 0 0 10px var(--secondary-neon);
 }
 
-/* Light Sweep */
 .neon-btn::before {
   content: '';
   position: absolute;
@@ -180,16 +184,17 @@
 
 /* Hero Visuals */
 .hero-visuals {
-  flex: 1;
+  flex: 1 1 260px;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 0;
 }
 
 .profile-wrapper {
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: clamp(200px, 30vw, 350px);
+  height: clamp(200px, 30vw, 350px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,15 +205,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 86%;
+  height: 86%;
   border-radius: 50%;
   border: 1px solid var(--primary-neon);
   opacity: 0;
   animation: pulse-ring 3s linear infinite;
 }
 
-.ring-1 { width: 300px; height: 300px; animation-delay: 0s !important; }
-.ring-2 { width: 300px; height: 300px; animation-delay: 1s !important; }
-.ring-3 { width: 300px; height: 300px; animation-delay: 2s !important; }
+.ring-1 { animation-delay: 0s !important; }
+.ring-2 { animation-delay: 1s !important; }
+.ring-3 { animation-delay: 2s !important; }
 
 @keyframes pulse-ring {
   0% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; box-shadow: 0 0 10px var(--primary-neon); }
@@ -224,20 +231,20 @@
 }
 
 .rotating-clockwise {
-  width: 350px;
-  height: 350px;
-  margin-top: -175px;
-  margin-left: -175px;
+  width: 100%;
+  height: 100%;
+  margin-top: -50%;
+  margin-left: -50%;
   border-top-color: var(--primary-neon);
   border-right-color: transparent;
   animation: rotate-cw 10s linear infinite;
 }
 
 .rotating-counter {
-  width: 320px;
-  height: 320px;
-  margin-top: -160px;
-  margin-left: -160px;
+  width: 91%;
+  height: 91%;
+  margin-top: -45.5%;
+  margin-left: -45.5%;
   border: 2px solid rgba(255, 0, 170, 0.4);
   border-bottom-color: var(--secondary-neon);
   border-left-color: transparent;
@@ -248,8 +255,8 @@
 @keyframes rotate-ccw { 100% { transform: rotate(-360deg); } }
 
 .image-container {
-  width: 300px;
-  height: 330px;
+  width: 86%;
+  height: 94%;
   border-radius: 50%;
   overflow: hidden;
   position: relative;
@@ -261,8 +268,8 @@
 .profile-img {
   width: 100%;
   height: 100%;
-  top: 23px;
   object-fit: cover;
+  object-position: top center;
   filter: grayscale(40%) contrast(1.2);
   transition: all 0.5s ease;
 }
@@ -284,16 +291,52 @@
   pointer-events: none;
 }
 
+/* Kinetic marquee strip beneath the hero — landonorris.com-style banner */
+.hero-marquee {
+  position: relative;
+  z-index: 10;
+  margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: scroll-cue-bob 2s ease-in-out infinite;
+}
+
+.scroll-cue .line {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(var(--primary-neon), transparent);
+}
+
+@keyframes scroll-cue-bob {
+  0%, 100% { transform: translate(-50%, 0); opacity: 0.6; }
+  50% { transform: translate(-50%, 6px); opacity: 1; }
+}
+
 @media (max-width: 992px) {
   .hero-content {
     flex-direction: column-reverse;
     text-align: center;
+    padding-top: clamp(6rem, 18vw, 8rem);
   }
-  .glitch-name { font-size: 3rem; }
-  .typewriter-container { font-size: 1.2rem; }
   .cta-container { justify-content: center; }
-  .profile-wrapper { width: 280px; height: 280px; }
-  .rotating-clockwise { width: 300px; height: 300px; margin: -150px 0 0 -150px; }
-  .rotating-counter { width: 270px; height: 270px; margin: -135px 0 0 -135px; }
-  .image-container { width: 200px; height: 200px; }
+}
+
+@media (max-width: 480px) {
+  .hero-content { gap: 2.5rem; }
+  .scroll-cue { display: none; }
 }

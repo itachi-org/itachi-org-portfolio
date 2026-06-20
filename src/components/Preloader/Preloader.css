@@ -3,13 +3,14 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100svh;
   background-color: var(--bg-color);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999;
   transition: opacity 0.5s ease-out;
+  padding: 1rem;
 }
 
 .preloader.fade-out {
@@ -36,13 +37,13 @@
 
 .preloader-content {
   text-align: center;
-  width: 80%;
+  width: 100%;
   max-width: 500px;
 }
 
 .system-text {
   color: var(--primary-neon);
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   letter-spacing: 4px;
   margin-bottom: 2rem;
   text-shadow: 0 0 10px var(--primary-neon);
