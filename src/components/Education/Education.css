@@ -23,7 +23,7 @@
   background: var(--secondary-neon);
   color: #fff;
   padding: 5px 30px;
-  font-size: 0.75rem;
+  font-size: 0.60rem;
   font-weight: bold;
   letter-spacing: 2px;
   transform: rotate(45deg);
@@ -81,4 +81,30 @@
   font-family: var(--font-body);
   font-size: 0.85rem;
   letter-spacing: 1px;
+}
+
+.edu-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 0, 170, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dotted var(--secondary-neon);
+  box-shadow: inset 0 0 15px rgba(255, 0, 170, 0.2);
+  transition: transform 0.3s ease;
+  overflow: hidden; /* keep logo clipped to the circle */
+}
+
+.edu-card:hover .edu-icon-wrapper {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.edu-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px; /* breathing room so logos don't touch the border */
 }

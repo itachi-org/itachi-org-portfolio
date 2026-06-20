@@ -16,7 +16,7 @@ export default function Experience() {
         "Performed rigorous system auditing, debugging, and comprehensive module testing to ensure enterprise readiness."
       ],
       // Drop a photo or screenshot for this entry here (e.g. workplace, system UI)
-      image: "/images/experience/techfactorsinc.jpg"
+      image: "/images/experience/exp.jpg"
     },
     {
       title: "SPES Program (2023 - 2025)",
@@ -27,7 +27,7 @@ export default function Experience() {
         "Processed and digitized documentation for building permits and zoning applications.",
         "Ensured compliance with local engineering protocols through systematic filing."
       ],
-      image: "/images/experience/spes-program.jpg"
+      image: "/images/experience/engr.jpg"
     }
   ];
 

@@ -1,9 +1,63 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Contact.css';
 import { Facebook, Instagram, Linkedin, Github, Mail, Phone, SendHorizontal } from 'lucide-react';
+import { useRef, useState } from 'react';
+
+type Status = 'idle' | 'sending' | 'sent' | 'error';
 
 export default function Contact() {
   const revealRef = useScrollReveal();
+  const formRef = useRef<HTMLFormElement>(null);
+  const mountedAt = useRef(Date.now());
+  const [status, setStatus] = useState<Status>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    const formData = new FormData(formRef.current);
+
+    // Honeypot check: real users never fill this, bots usually do
+    if (formData.get('company')) {
+      // Pretend it worked so the bot doesn't know it was blocked
+      setStatus('sending');
+      setTimeout(() => {
+        setStatus('sent');
+        formRef.current?.reset();
+      }, 800);
+      return;
+    }
+
+    // Time-trap: reject submissions faster than a human could realistically type
+    const elapsed = Date.now() - mountedAt.current;
+    if (elapsed < 2500) {
+      setStatus('sending');
+      setTimeout(() => {
+        setStatus('sent');
+        formRef.current?.reset();
+      }, 800);
+      return;
+    }
+
+    setStatus('sending');
+
+    try {
+      const response = await fetch(formRef.current.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        setStatus('sent');
+        formRef.current.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
 
   return (
     <section id="contact" className="contact-section">
@@ -48,27 +102,49 @@ export default function Contact() {
           <div className="contact-form-wrapper glass-card">
             <h3 className="display-font">SECURE_TRANSMISSION</h3>
             <form 
+              ref={formRef}
               className="contact-form"
-              action="mailto:cantal2227@gmail.com" 
-              method="post" 
-              encType="text/plain"
+              action="https://formspree.io/f/xzdlpdjr"
+              method="POST"
+              onSubmit={handleSubmit}
             >
+              {/* Honeypot field — hidden from real users, bots tend to fill it anyway */}
+              <div className="honeypot-field" aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="input-group">
-                <input type="text" name="name" required placeholder="GUEST_ID (Name)" />
+                <input type="text" name="name" required placeholder="GUEST_ID (Name)" disabled={status === 'sending'} />
                 <span className="input-highlight"></span>
               </div>
               <div className="input-group">
-                <input type="email" name="email" required placeholder="RETURN_NODE (Email)" />
+                <input type="email" name="email" required placeholder="RETURN_NODE (Email)" disabled={status === 'sending'} />
                 <span className="input-highlight"></span>
               </div>
               <div className="input-group">
-                <textarea name="message" rows={5} required placeholder="PAYLOAD (Message)"></textarea>
+                <textarea name="message" rows={5} required placeholder="PAYLOAD (Message)" disabled={status === 'sending'}></textarea>
                 <span className="input-highlight"></span>
               </div>
-              <button type="submit" className="submit-btn neon-btn primary">
-                <span className="btn-text">[SEND MESSAGE]</span>
+              <button type="submit" className="submit-btn neon-btn primary" disabled={status === 'sending'}>
+                <span className="btn-text">
+                  {status === 'sending' ? '[TRANSMITTING...]' : '[SEND MESSAGE]'}
+                </span>
                 <SendHorizontal size={18} />
               </button>
+
+              {status === 'sent' && (
+                <p className="form-status form-success">TRANSMISSION RECEIVED. I'll get back to you soon.</p>
+              )}
+              {status === 'error' && (
+                <p className="form-status form-error">TRANSMISSION FAILED. Please try again or email me directly.</p>
+              )}
             </form>
           </div>
         </div>

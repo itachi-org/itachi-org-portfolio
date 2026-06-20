@@ -12,7 +12,7 @@ export default function Hero() {
   const primaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
   const secondaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
 
-  const roles = ["Full-Stack Developer", "Data Analyst", "AI Automation Engineer", "UI/UX Designer"];
+  const roles = ["Full-Stack Developer", "Data Analyst", "AI Automation Engineer", "UI/UX Designer", "QA Tester"];
 
   // Typewriter effect
   useEffect(() => {

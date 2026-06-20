@@ -13,7 +13,7 @@ export default function Projects() {
       description: "Internal operations system managing equipment deployments, inspections, inventory logistics, and user control. Hardened architecture for seamless enterprise ops.",
       link: "https://techfactorsincequipmentmanagementsystem.onrender.com/",
       // Drop a screenshot of the live app at this path (recommended ~1200x800)
-      image: "/images/projects/tala-sys.png"
+      image: "/images/projects/tashohoho.png"
     },
     {
       title: "3N8Analytics",
@@ -21,23 +21,23 @@ export default function Projects() {
       tech: ["React/Vite", "JavaScript", "Firebase"],
       description: "Causal forecasting & simulation engine for beverage supply chains. Predicts demand to optimize inventory management directly for Pepsi distribution nodes.",
       link: "https://www.3n8analytics.site/",
-      image: "/images/projects/3n8analytics.png"
+      image: "/images/projects/3n8sh.png"
     },
-    {
-      title: "Note Nudge",
-      subtitle: "Task Management System",
-      tech: ["React", "Python", "Firebase", "JavaScript", "Tailwind"],
-      description: "A dual-language task management sys offering real-time sync, smart notifications, and automatic overdue archiving. Ensures fluid personal and team productivity.",
-      link: "https://github.com/seansalabsab/Taskdumpster",
-      image: "/images/projects/note-nudge.png"
-    },
+    // {
+    //   title: "Note Nudge",
+    //   subtitle: "Task Management System",
+    //   tech: ["React", "Python", "Firebase", "JavaScript", "Tailwind"],
+    //   description: "A dual-language task management sys offering real-time sync, smart notifications, and automatic overdue archiving. Ensures fluid personal and team productivity.",
+    //   link: "https://github.com/seansalabsab/Taskdumpster",
+    //   image: "/images/projects/nn.png"
+    // },
     {
       title: "Botani-Snap AI",
       subtitle: "Plant Identification System",
       tech: ["React", "Python", "Firebase", "AI Models"],
       description: "Visual AI recognition system allowing camera input or upload to classify plant species and retrieve curated care instructions in real-time.",
       link: "https://github.com/thebadsektor/tc3202-3b-4",
-      image: "/images/projects/botani-snap.png"
+      image: "/images/projects/bota.jpg"
     }
   ];
 
@@ -48,7 +48,20 @@ export default function Projects() {
 
         <div ref={revealRef} className="projects-grid reveal">
           {projects.map((proj, idx) => (
-            <div key={idx} className="project-card glass-card">
+            <div
+              key={idx}
+              className="project-card glass-card"
+              role="link"
+              tabIndex={0}
+              aria-label={`View ${proj.title} project`}
+              onClick={() => window.open(proj.link, '_blank', 'noopener,noreferrer')}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.open(proj.link, '_blank', 'noopener,noreferrer');
+                }
+              }}
+            >
               <div className="card-border-trace"></div>
 
               <div className="project-thumb">
@@ -87,6 +100,7 @@ export default function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="project-link neon-btn secondary btn-sm"
+                onClick={(e) => e.stopPropagation()}
               >
                 [ACCESS DATA]
               </a>

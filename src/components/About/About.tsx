@@ -27,10 +27,10 @@ export default function About() {
               <div className="stat-number neon-text font-display">3+</div>
               <div className="stat-label">Major Projects Completed</div>
             </div>
-            <div className="stat-card glass-card">
+            {/* <div className="stat-card glass-card">
               <div className="stat-number neon-text font-display">2</div>
               <div className="stat-label">OJT Endorsements</div>
-            </div>
+            </div> */}
             <div className="stat-card glass-card">
               <div className="stat-number neon-text font-display">DS</div>
               <div className="stat-label">Data Science Major</div>

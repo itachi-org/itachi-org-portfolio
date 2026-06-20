@@ -141,3 +141,44 @@
     grid-template-columns: 1fr;
   }
 }
+
+.form-status {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: -0.5rem;
+}
+
+.form-success {
+  color: var(--primary-neon);
+  text-shadow: 0 0 8px rgba(0, 255, 231, 0.4);
+}
+
+.form-error {
+  color: #ff4d4d;
+}
+.honeypot-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  left: -9999px;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  margin-top: -0.5rem;
+}
+
+.form-success {
+  color: var(--primary-neon);
+  text-shadow: 0 0 8px rgba(0, 255, 231, 0.4);
+}
+
+.form-error {
+  color: #ff4d4d;
+}
