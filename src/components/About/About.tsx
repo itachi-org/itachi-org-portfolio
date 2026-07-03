@@ -11,33 +11,35 @@ export default function About() {
         
         <div ref={revealRef} className="about-grid reveal">
           <div className="about-bio glass-card">
-            <h3 className="display-font">SYSTEM_USER: MARC AIRON</h3>
+            <h3 className="display-font">Hi, I am Ryota Oshima.</h3>
             <p className="bio-text">
-              Hi, I'm Marc Airon — a Computer Science student majoring in Data Science from Laguna University. 
-              I build full-stack systems, automate workflows with AI, and design interfaces that feel like the future.
+              I’m a Blockchain & Full Stack Developer with 6+ years of experience building secure, scalable Web3 and full-stack applications using Solidity, Hardhat, React, Node.js, TypeScript, and PostgreSQL.
             </p>
             <p className="bio-text">
-              My focus is bridging the gap between performant structural design and immersive aesthetics, delivering 
-              experiences that not only function flawlessly but leave a lasting impression in cyberspace.
+              I specialize in developing high-performance dApps and seamless on-chain/off-chain integrations, with a proven track record of improving security, optimizing system performance, and delivering reliable products used by thousands of users.
             </p>
           </div>
 
           <div className="about-stats">
             <div className="stat-card glass-card">
-              <div className="stat-number neon-text font-display">3+</div>
-              <div className="stat-label">Major Projects Completed</div>
-            </div>
-            {/* <div className="stat-card glass-card">
-              <div className="stat-number neon-text font-display">2</div>
-              <div className="stat-label">OJT Endorsements</div>
-            </div> */}
-            <div className="stat-card glass-card">
-              <div className="stat-number neon-text font-display">DS</div>
-              <div className="stat-label">Data Science Major</div>
+              <div className="stat-number neon-text font-display">30+</div>
+              <div className="stat-label">Full Stack Development</div>
             </div>
             <div className="stat-card glass-card">
-              <div className="stat-number neon-text font-display">∞</div>
-              <div className="stat-label">Lines of Code</div>
+              <div className="stat-number neon-text font-display">10+</div>
+              <div className="stat-label">Blockchain Development</div>
+            </div>
+            <div className="stat-card glass-card">
+              <div className="stat-number neon-text font-display">4+</div>
+              <div className="stat-label">Web3 Development</div>
+            </div>
+            <div className="stat-card glass-card">
+              <div className="stat-number neon-text font-display">4+</div>
+              <div className="stat-label">Mobile Development</div>
+            </div>
+            <div className="stat-card glass-card">
+              <div className="stat-number neon-text font-display">20+</div>
+              <div className="stat-label">Automation Development</div>
             </div>
           </div>
         </div>

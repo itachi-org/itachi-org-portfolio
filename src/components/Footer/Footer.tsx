@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-logo display-font">
           <span className="logo-brace">&lt;</span>
-          <span className="logo-text"> MARC_AIRON_CANTAL </span>
+          <span className="logo-text"> Itachi-org_R. Oshima </span>
           <span className="logo-brace">/&gt;</span>
         </div>
         

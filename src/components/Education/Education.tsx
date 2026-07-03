@@ -6,29 +6,22 @@ export default function Education() {
   const revealRef = useScrollReveal();
 
   const eduData = [
- 
-     {
-      degree: "Elementary Education",
-      school: "Tomas Daguinsin Elementary School",
-      period: "2008 – 2014",
-      status: "PRIMARY",
+
+    {
+      degree: "High School Diploma",
+      school: "Niigata Prefectural Shibata High School",
+      period: "Apr 2018 — Mar 2021",
+      status: "Top Honors",
       logo: "/images/tdes.png"
     },
     {
-      degree: "Secondary Education ( JHS + SHS )",
-      school: "Liceo de Victoria",
-      period: "2014 – 2020",
-      status: "SECONDARY",
-      logo: "/images/ldv.png"
-    },
-       {
-      degree: "BS Computer Science – Major in Data Science",
-      school: "Laguna University",
-      period: "2022 – 2026",
-      status: "TERTIARY",
+      degree: "Bachelor of Information Systems",
+      school: "Niigata University of International and Information Studies",
+      period: "Apr 2021 — Mar 2025",
+      status: "Top Honors",
       logo: "/images/lu.png" // put file in /public/images
     }
-   
+
   ];
 
   return (

@@ -1,6 +1,7 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Contact.css';
 import { Facebook, Instagram, Linkedin, Github, Mail, Phone, SendHorizontal } from 'lucide-react';
+import { SiTelegram, SiDiscord, SiWhatsapp } from 'react-icons/si';
 import { useRef, useState } from 'react';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
@@ -66,7 +67,7 @@ export default function Contact() {
         
         <div ref={revealRef} className="contact-grid reveal">
           <div className="contact-info glass-card">
-            <h3 className="display-font">COMM_CHANNELS</h3>
+            <h3 className="display-font">Contact_Info</h3>
             <p className="contact-desc">
               Initialize a secure connection protocol. Send a ping to my terminal for collaborations, 
               inquiries, or system logs analysis.
@@ -75,7 +76,7 @@ export default function Contact() {
             <div className="direct-contact">
               <div className="contact-item">
                 <Mail className="contact-icon" color="var(--primary-neon)" />
-                <a href="mailto:cantal2227@gmail.com">cantal2227@gmail.com</a>
+                <a href="mailto:ryota.oshima2026@gmail.com">ryota.oshima2026@gmail.com</a>
               </div>
               <div className="contact-item">
                 <Phone className="contact-icon" color="var(--primary-neon)" />
@@ -84,16 +85,16 @@ export default function Contact() {
             </div>
             
             <div className="social-links">
-              <a href="https://www.facebook.com/INJOKERIN0/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <Facebook />
+              <a href={`https://t.me/hades02921`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Telegram">
+                <SiTelegram />
               </a>
-              <a href="https://www.instagram.com/marcxairon_22/" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <Instagram />
+              <a href={`https://discord.gg/user/itachi_org02921`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Discord">
+                <SiDiscord />
               </a>
-              <a href="https://www.linkedin.com/in/marc-airon-cantal-4a063a32b/?skipRedirect=true" target="_blank" rel="noopener noreferrer" className="social-icon">
-                <Linkedin />
+              <a href={`https://wa.me/639761386092`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+                <SiWhatsapp />
               </a>
-              <a href="https://github.com/PapiAiron" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href="https://github.com/itachi-org" target="_blank" rel="noopener noreferrer" className="social-icon">
                 <Github />
               </a>
             </div>

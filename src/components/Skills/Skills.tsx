@@ -3,9 +3,12 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Skills.css';
 import {
   SiPython, SiSharp, SiDotnet, SiOpenjdk, SiHtml5, SiCss, SiJavascript,
-  SiReact, SiTypescript, SiVite, SiMysql, SiFirebase, SiFigma
+  SiReact, SiTypescript, SiVite, SiMysql, SiFirebase, SiFigma,
+  SiNodedotjs, SiExpress, SiEthereum, SiSolidity, SiWeb3Dotjs,
+  SiEthers, SiSolana, SiFlutter, SiExpo, SiKotlin,
+  SiAndroidstudio, SiHive, SiN8N, SiOpenai, SiDocker
 } from 'react-icons/si';
-import { Workflow, Cog, PenTool, Sparkles, type LucideIcon } from 'lucide-react';
+import { Workflow, Cog, PenTool, Sparkles, Code2, Layers, Server, Database, Hammer, Package, Play, type LucideIcon } from 'lucide-react';
 import type { IconType } from 'react-icons';
 
 // Maps each skill label to its brand icon. Anything without a known
@@ -18,17 +21,42 @@ const skillIconMap: Record<string, IconType | LucideIcon> = {
   'Java': SiOpenjdk,
   'HTML': SiHtml5,
   'CSS': SiCss,
+  'JS': SiJavascript,
   'JavaScript': SiJavascript,
-  'React': SiReact,
+  'TS': SiTypescript,
   'TypeScript': SiTypescript,
+  'React': SiReact,
   'Vite': SiVite,
-  'SQL': SiMysql,
+  'Node.js': SiNodedotjs,
+  'Express': SiExpress,
+  'Ethereum': SiEthereum,
+  'Solidity': SiSolidity,
+  'Smart Contract': Code2,
+  'DApps': Layers,
+  'NFT': Database,
+  'Web3.js': SiWeb3Dotjs,
+  'Ethers.js': SiEthers,
+  'Solana': SiSolana,
+  'Hardhat': Hammer,
+  'Truffle': Package,
+  'React Native': Play,
+  'Flutter': SiFlutter,
+  'Expo': SiExpo,
+  'Kotlin': SiKotlin,
+  'Android Studio': SiAndroidstudio,
   'Firebase': SiFirebase,
+  'Hive': SiHive,
+  'Playwright': Play,
+  'n8n': SiN8N,
+  'OpenAI': SiOpenai,
+  'Docker': SiDocker,
+  'SQL': SiMysql,
   'MySQL': SiMysql,
   'Figma': SiFigma,
   'UI/UX Design': PenTool,
   'Gumloop': Sparkles,
   'Workflow Automation': Workflow,
+  'Rest API': Server,
   'Process Optimization': Cog,
 };
 
@@ -64,7 +92,7 @@ export default function Skills() {
 
     let animationId: number;
     let lastTime = 0;
-    const fps = 30;
+    const fps = 20;
     const interval = 1000 / fps;
 
     const draw = (currentTime: number) => {
@@ -104,21 +132,25 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      title: "AI & Automation",
-      skills: ["Gumloop", "Workflow Automation", "Process Optimization"]
+      title: "Full Stack Development",
+      skills: ["HTML", "CSS", "JS", "TS", "React", "Node.js", "Express", "Vite"]
     },
     {
-      title: "Software Development",
-      skills: ["Python", "C#", ".NET", "Java"]
+      title: "Blockchain Development",
+      skills: ["Ethereum", "Solidity", "Smart Contract", "DApps", "NFT", "Docker"]
     },
     {
-      title: "Web Development",
-      skills: ["HTML", "CSS", "JavaScript", "React", "TypeScript", "Vite"]
+      title: "Web3 Development",
+      skills: ["Web3.js", "Ethers.js", "Solana", "Hardhat", "Truffle"]
     },
     {
-      title: "Databases & Design",
-      skills: ["SQL", "Firebase", "MySQL", "Figma", "UI/UX Design"]
-    }
+      title: "Mobile Development",
+      skills: ["React Native", "Flutter", "Expo", "Kotlin", "Java", "Android Studio", "Firebase", "Hive"]
+    },
+    {
+      title: "Automation Development",
+      skills: ["Python", "Workflow Automation", "Rest API", "Playwright", "n8n", "Docker", "OpenAI"]
+    },
   ];
 
   return (

@@ -40,7 +40,7 @@ export default function Navbar() {
       <div className="nav-container">
         <div className="nav-logo" onClick={() => handleNavClick('home')}>
           <span className="logo-brace">&lt;</span>
-          <span className="logo-text"> MARC </span>
+          <span className="logo-text"> Itachi-org </span>
           <span className="logo-brace">/&gt;</span>
         </div>
 

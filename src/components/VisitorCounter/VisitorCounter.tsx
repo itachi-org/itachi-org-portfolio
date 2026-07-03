@@ -14,7 +14,7 @@ import './VisitorCounter.css';
  * counter falls back to a local "your visits" tally stored in this
  * browser only, so the widget never breaks or shows a dead state.
  */
-const NAMESPACE = 'marc-airon-cantal-portfolio';
+const NAMESPACE = 'itachi-org-portfolio';
 const KEY = 'site-visits';
 
 export default function VisitorCounter() {

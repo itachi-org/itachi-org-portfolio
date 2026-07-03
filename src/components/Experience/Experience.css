@@ -5,7 +5,7 @@
 
 .timeline-container {
   position: relative;
-  max-width: 800px;
+  max-width: 1100px; /* increased for wider cards */
   margin: 0 auto;
 }
 
@@ -94,7 +94,7 @@
 
 .exp-thumb {
   position: relative;
-  flex: 0 0 clamp(120px, 30%, 220px);
+  flex: 0 0 clamp(140px, 34%, 260px); /* slightly larger thumbnails */
   aspect-ratio: 4 / 3;
   border-radius: 6px;
   overflow: hidden;
@@ -131,7 +131,7 @@
 }
 
 .exp-details {
-  flex: 1 1 240px;
+  flex: 1 1 320px; /* allow details column to expand for wider cards */
   padding-left: 1.2rem;
   list-style-type: none;
   min-width: 0;
@@ -143,6 +143,7 @@
   margin-bottom: 0.8rem;
   line-height: 1.6;
   position: relative;
+  text-align: justify;
 }
 
 .exp-details li::before {

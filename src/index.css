@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  cursor: none !important;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);

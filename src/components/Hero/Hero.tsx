@@ -10,9 +10,9 @@ export default function Hero() {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const primaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
-  const secondaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
+  // const secondaryBtnRef = useMagnetic<HTMLAnchorElement>(0.3);
 
-  const roles = ["Full-Stack Developer", "Data Analyst", "AI Automation Engineer", "UI/UX Designer", "QA Tester"];
+  const roles = ["Full-Stack Developer", "Blockchain Developer", "Web3 Developer", "Mobile Expert", "Automation Developer"];
 
   // Typewriter effect
   useEffect(() => {
@@ -136,8 +136,8 @@ export default function Hero() {
       <div className="hero-content section-container">
         <div className="hero-text">
           <p className="greeting">INITIALIZING_USER_PROFILE...</p>
-          <h1 className="glitch-name" data-text="MARC AIRON CANTAL">
-            MARC AIRON CANTAL
+          <h1 className="glitch-name" data-text="Itachi-org Oshima">
+            Itachi-org Oshima
           </h1>
           <h2 className="typewriter-container">
             <span className="role-text">&gt; {roleText}</span>
@@ -146,14 +146,6 @@ export default function Hero() {
           <div className="cta-container">
             <a ref={primaryBtnRef} href="#projects" className="neon-btn primary">
               <span className="btn-text">[VIEW PROJECTS]</span>
-            </a>
-            <a
-              ref={secondaryBtnRef}
-              href="/files/cv.pdf"
-              download="Marc_Airon_Cantal_CV.pdf"
-              className="neon-btn secondary"
-            >
-              <span className="btn-text">[DOWNLOAD CV]</span>
             </a>
           </div>
         </div>
@@ -180,7 +172,7 @@ export default function Hero() {
       <div className="hero-marquee marquee-strip" aria-hidden="true">
         <div className="marquee-track">
           {Array.from({ length: 2 }).flatMap((_, i) =>
-            ['FULL-STACK DEVELOPER', 'DATA SCIENCE', 'AI AUTOMATION', 'UI / UX DESIGN'].map((label) => (
+            ["Full-Stack Developer", "Blockchain Developer", "Web3 Developer", "Mobile Expert", "Automation Developer"].map((label) => (
               <span key={`${i}-${label}`}>{label}</span>
             ))
           )}

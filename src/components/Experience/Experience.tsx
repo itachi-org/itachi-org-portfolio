@@ -7,27 +7,44 @@ export default function Experience() {
 
   const expData = [
     {
-      title: "On-the-Job Training",
-      company: "TechFactorsInc",
-      period: "Feb 2026 – Apr 2026",
+      title: "Blockchain Developer",
+      company: "NexisWave Systems Co., Ltd",
+      period: "Jun 2021 — Present",
       details: [
-        "Spearheaded the development of TALA.Sys using React, Vite, TypeScript, and Firebase.",
-        "Executed robotics and Arduino-related hardware/software tasks.",
-        "Performed rigorous system auditing, debugging, and comprehensive module testing to ensure enterprise readiness."
+        "Lead development of secure, upgradeable smart contracts and on-chain components using Solidity and Hardhat, delivering 12+ contracts for token, governance and marketplace features",
+        "Implemented multi-chain support (Ethereum, Polygon) and wallet integrations, improving user onboarding and increasing on-chain transaction success while reducing average gas per interaction by 25% through optimizations.",
+        "Built and maintained backend services and node infrastructure, improving DApp uptime to 99.9% and reducing incident response time through monitoring and alerting.",
+        "Introduced automated testing and CI/CD pipelines (Docker, GitHub Actions) to ensure reliable releases and shorten deployment cycles.",
+        "Collaborated with security teams to perform audits and remediation, mentored 3 junior developers, and coordinated cross-team deliveries to meet product milestones."
       ],
-      // Drop a photo or screenshot for this entry here (e.g. workplace, system UI)
-      image: "/images/experience/exp.jpg"
+      // Photo for this entry (local copy)
+      image: "/images/experience/blockchain.jpg"
     },
     {
-      title: "SPES Program (2023 - 2025)",
-      company: "Victoria, Laguna Engineering Office",
-      period: "Summer Job Program",
+      title: "Full Stack Developer",
+      company: "Sakura Tech Solutions Co., Ltd.",
+      period: "Mar 2022 — Mar 2026",
       details: [
-        "Provided critical front-office support and communication routing.",
-        "Processed and digitized documentation for building permits and zoning applications.",
-        "Ensured compliance with local engineering protocols through systematic filing."
+        "Designed and implemented scalable dApps and REST APIs using React, Node.js/Express, Solidity, and ethers.js/web3.js; integrated MetaMask and WalletConnect for seamless wallet interactions and multi-chain support (Ethereum, Polygon).",
+        "Developed and audited 8 smart contracts with Hardhat, applied upgradeable patterns and gas optimizations that reduced average gas per transaction by ~30% and improved on-chain success rate by 28%.",
+        "Architected backend microservices and optimized PostgreSQL queries and caching layers, increasing API throughput by 50% and reducing latency by 60% under load.",
+        "Built automated CI/CD pipelines with Docker and GitHub Actions and expanded unit/integration test coverage, lowering deployment rollback rate by ~70%.",
+        "Collaborated with product, security, and QA teams; mentored 6 junior engineers and led delivery of 10+ product features, supporting growth to ~25k monthly active users."
       ],
-      image: "/images/experience/engr.jpg"
+      image: "/images/experience/sakura.jpg"
+    },
+    {
+      title: "Full Stack Developer",
+      company: "BlueOrbit Labs Pte Ltd",
+      period: "Jul 2021 — Nov 2025",
+      details: [
+        "Designed and built an end-to-end web application and Web3 integrations using React, Node.js/Express, and Solidity smart contracts, enabling secure on-chain/off-chain interactions and supporting 10k+ monthly users.",
+        "Implemented and tested smart contracts (Solidity) with Hardhat and Truffle; executed audits and fixes that reduced contract vulnerabilities by 90% and decreased failed transactions by 35%.",
+        "Optimized backend performance and database design (PostgreSQL) to increase API throughput by 40% and lower average response time from 450ms to 180ms. ",
+        "Created CI/CD pipelines with GitHub Actions and Docker, automating build/test/deploy and cutting release time from multiple hours to under 15 minutes; managed staging and production rollouts.",
+        "Led cross-functional collaborations with product and QA teams, mentored 4 junior developers, and delivered 6 major feature releases on schedule."
+      ],
+      image: "/images/experience/blueorbit.jpg"
     }
   ];
 
