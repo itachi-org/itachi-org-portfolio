@@ -57,13 +57,6 @@ src/
    ```
 2. The optimized, production-ready static assets will be generated in the `dist/` directory.
 
-## 🎨 How to customize
-
-- **Profile Image:** Replace `public/images/marc-graduation.jpg` with your own image, keeping the exact same filename, or update the `src` attribute in `src/components/Hero/Hero.tsx`.
-- **CV File:** Place your CV at `public/files/marc-cv.pdf` for the download button to work correctly.
-- **Social Links:** Update your URLs directly in `src/components/Contact/Contact.tsx`.
-- **Color Theme:** Modify the root CSS variables in `src/index.css` to instantly change the neon color mappings across the entire application.
-
 ## 📜 License
 
 MIT
