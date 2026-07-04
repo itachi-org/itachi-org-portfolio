@@ -136,15 +136,15 @@ export default function Hero() {
       <div className="hero-content section-container">
         <div className="hero-text">
           <p className="greeting">INITIALIZING_USER_PROFILE...</p>
-          <h1 className="glitch-name" data-text="Itachi-org Oshima">
-            Itachi-org Oshima
+          <h1 className="glitch-name" data-text="Itachi-org">
+            Itachi-org
           </h1>
           <h2 className="typewriter-container">
             <span className="role-text">&gt; {roleText}</span>
             <span className="cursor">|</span>
           </h2>
           <div className="cta-container">
-            <a ref={primaryBtnRef} href="#projects" className="neon-btn primary">
+            <a ref={primaryBtnRef} href="#projects" className="neon-btn primary" aria-label="View projects section">
               <span className="btn-text">[VIEW PROJECTS]</span>
             </a>
           </div>

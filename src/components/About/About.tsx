@@ -18,6 +18,9 @@ export default function About() {
             <p className="bio-text">
               I specialize in developing high-performance dApps and seamless on-chain/off-chain integrations, with a proven track record of improving security, optimizing system performance, and delivering reliable products used by thousands of users.
             </p>
+            <p className="bio-text">
+              My work focuses on secure smart contract architecture, enterprise-ready backend systems, and immersive front-end experiences that help startups and established teams launch Web3 products faster.
+            </p>
           </div>
 
           <div className="about-stats">

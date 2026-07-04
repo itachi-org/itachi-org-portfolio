@@ -53,12 +53,17 @@ export default function Navbar() {
         <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
           {links.map((link) => (
             <li key={link}>
-              <button 
-                onClick={() => handleNavClick(link)}
+              <a
+                href={`#${link.toLowerCase()}`}
+                onClick={(event) => {
+                  event.preventDefault();
+                  handleNavClick(link);
+                }}
                 className={activeSection === link.toLowerCase() ? 'active' : ''}
+                aria-current={activeSection === link.toLowerCase() ? 'page' : undefined}
               >
                 {link}
-              </button>
+              </a>
             </li>
           ))}
         </ul>

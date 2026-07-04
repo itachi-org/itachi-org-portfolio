@@ -30,13 +30,16 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <CursorTrail />
       {loading ? (
         <Preloader onComplete={handlePreloadComplete} />
       ) : (
         <>
-          <Navbar />
-          <main>
+          <header>
+            <Navbar />
+          </header>
+          <main id="main-content" aria-label="Portfolio sections">
             <Hero />
             <About />
             <Skills />
