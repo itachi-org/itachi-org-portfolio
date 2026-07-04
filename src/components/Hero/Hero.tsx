@@ -132,8 +132,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero-section">
-      {/* SEO-only H1: visible to crawlers/screen-readers, hidden visually */}
-      <h1 className="sr-only">Ryota Oshima</h1>
+      {/* SEO handled server-side; avoid duplicate H1 in client bundle */}
       <canvas ref={canvasRef} className="hero-canvas" aria-hidden="true"></canvas>
       <div className="hero-content section-container">
         <div className="hero-text">
