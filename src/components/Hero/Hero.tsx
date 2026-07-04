@@ -132,17 +132,22 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero-section">
-      <canvas ref={canvasRef} className="hero-canvas"></canvas>
+      {/* SEO-only H1: visible to crawlers/screen-readers, hidden visually */}
+      <h1 className="sr-only">Ryota Oshima</h1>
+      <canvas ref={canvasRef} className="hero-canvas" aria-hidden="true"></canvas>
       <div className="hero-content section-container">
         <div className="hero-text">
           <p className="greeting">INITIALIZING_USER_PROFILE...</p>
-          <h1 className="glitch-name" data-text="Itachi-org">
-            Itachi-org
+          <h1 className="glitch-name" data-text="Itachi-org Oshima">
+            Itachi-org Oshima
           </h1>
           <h2 className="typewriter-container">
             <span className="role-text">&gt; {roleText}</span>
             <span className="cursor">|</span>
           </h2>
+          <p className="hero-summary">
+            I build secure Web3 applications, dApps, and automation systems using Solidity, React, TypeScript, Node.js, and PostgreSQL.
+          </p>
           <div className="cta-container">
             <a ref={primaryBtnRef} href="#projects" className="neon-btn primary" aria-label="View projects section">
               <span className="btn-text">[VIEW PROJECTS]</span>
@@ -162,7 +167,7 @@ export default function Hero() {
               <div className="hud-markers"></div>
             </div>
             <div className="image-container">
-              <img src="/images/gradpic.jpg" alt="Marc Airon Cantal - Graduation Photo" className="profile-img" />
+              <img src="/images/gradpic.jpg" alt="Ryota Oshima - Graduation Photo" className="profile-img" loading="lazy" decoding="async" />
               <div className="img-overlay"></div>
             </div>
           </div>

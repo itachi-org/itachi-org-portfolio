@@ -1,4 +1,4 @@
-# Marc Airon T. Cantal - Portfolio
+# Ryota Oshima - Portfolio
 
 A production-ready, cyberpunk-themed personal portfolio website built with modern web technologies. This project features high-performance canvas animations, glitch effects, neon geometry, and a fully custom CSS architecture.
 

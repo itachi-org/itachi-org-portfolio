@@ -39,6 +39,8 @@ export default function Education() {
                     src={edu.logo}
                     alt={`${edu.school} logo`}
                     className="edu-logo-img"
+                    loading="lazy"
+                    decoding="async"
                   />
                 ) : (
                   <GraduationCap size={32} color="var(--secondary-neon)" />
