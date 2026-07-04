@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#00111a" />
+      <stop offset="100%" stop-color="#001a2b" />
+    </linearGradient>
+    <style>
+      .title { font-family: 'Orbitron', sans-serif; fill: #00ffe7; font-size:56px; font-weight:700 }
+      .subtitle { font-family: 'Share Tech Mono', monospace; fill: #cfefff; font-size:28px }
+    </style>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)" />
+  <text x="60" y="180" class="title">Ryota Oshima</text>
+  <text x="60" y="240" class="subtitle">Blockchain & Web3 Developer — Portfolio</text>
+  <rect x="60" y="300" width="420" height="3" fill="#00ffe7" opacity="0.6" />
+  <g transform="translate(900,140)">
+    <circle cx="100" cy="100" r="120" fill="#071018" stroke="#00ffe7" stroke-width="6" />
+    <text x="100" y="220" font-family="Share Tech Mono, monospace" font-size="18" fill="#00ffe7" text-anchor="middle">itachi-org</text>
+  </g>
+</svg>
