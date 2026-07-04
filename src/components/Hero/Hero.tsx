@@ -145,9 +145,6 @@ export default function Hero() {
             <span className="role-text">&gt; {roleText}</span>
             <span className="cursor">|</span>
           </h2>
-          <p className="hero-summary">
-            I build secure Web3 applications, dApps, and automation systems using Solidity, React, TypeScript, Node.js, and PostgreSQL.
-          </p>
           <div className="cta-container">
             <a ref={primaryBtnRef} href="#projects" className="neon-btn primary" aria-label="View projects section">
               <span className="btn-text">[VIEW PROJECTS]</span>
