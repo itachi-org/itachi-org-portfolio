@@ -8,7 +8,7 @@
           "value": "www.itachi-org.vercel.app"
         }
       ],
-      "destination": "https://itachi-org.vercel.app/:1",
+      "destination": "https://itachi-org.vercel.app/",
       "permanent": true
     }
   ],
