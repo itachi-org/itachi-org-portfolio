@@ -80,7 +80,7 @@ export default function Contact() {
               </div>
               <div className="contact-item">
                 <Phone className="contact-icon" color="var(--primary-neon)" />
-                <a href="tel:+639761386092">+63 976 138 6092</a>
+                <a href="tel:+817095163012">+81 70 9516 3012</a>
               </div>
             </div>
             
@@ -91,7 +91,7 @@ export default function Contact() {
               <a href={`https://discord.gg/user/itachi_org02921`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Discord">
                 <SiDiscord />
               </a>
-              <a href={`https://wa.me/639761386092`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
+              <a href={`https://wa.me/817095163012`} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="WhatsApp">
                 <SiWhatsapp />
               </a>
               <a href="https://github.com/itachi-org" target="_blank" rel="noopener noreferrer" className="social-icon">
