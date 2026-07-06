@@ -11,7 +11,7 @@ export default function About() {
         
         <div ref={revealRef} className="about-grid reveal">
           <div className="about-bio glass-card">
-            <h3 className="display-font">Hi, I am Ryota Oshima.</h3>
+            <h3 className="display-font">Hi, I am Itachi-org.</h3>
             <p className="bio-text">
               I’m a Blockchain & Full Stack Developer with 6+ years of experience building secure, scalable Web3 and full-stack applications using Solidity, Hardhat, React, Node.js, TypeScript, and PostgreSQL.
             </p>

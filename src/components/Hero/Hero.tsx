@@ -163,7 +163,7 @@ export default function Hero() {
               <div className="hud-markers"></div>
             </div>
             <div className="image-container">
-              <img src="/images/gradpic.jpg" alt="Ryota Oshima - Graduation Photo" className="profile-img" loading="lazy" decoding="async" />
+              <img src="/images/gradpic.jpg" alt="Itachi-org - Graduation Photo" className="profile-img" loading="lazy" decoding="async" />
               <div className="img-overlay"></div>
             </div>
           </div>

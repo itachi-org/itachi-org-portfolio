@@ -10,7 +10,7 @@
     </style>
   </defs>
   <rect width="1200" height="630" fill="url(#g)" />
-  <text x="60" y="180" class="title">Ryota Oshima</text>
+  <text x="60" y="180" class="title">Itachi-org</text>
   <text x="60" y="240" class="subtitle">Blockchain & Web3 Developer — Portfolio</text>
   <rect x="60" y="300" width="420" height="3" fill="#00ffe7" opacity="0.6" />
   <g transform="translate(900,140)">

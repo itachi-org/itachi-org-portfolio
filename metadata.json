@@ -1,6 +1,6 @@
 {
   "name": "itachi-org",
-  "description": "A portfolio website for Ryota Oshima, a Blockchain & Web3 Developer.",
+  "description": "A portfolio website for Itachi-org, a Blockchain & Web3 Developer.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
